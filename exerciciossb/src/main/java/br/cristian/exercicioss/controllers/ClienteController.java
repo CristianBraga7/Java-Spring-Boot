@@ -3,16 +3,18 @@ package br.cristian.exercicioss.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.cristian.exercicioss.model.entities.Cliente;
 
 @RestController	
-@RequestMapping("/clientes")
-public class ClienteController {
 
-   @GetMapping("/qualquer2")
+public class ClienteController {
+	@RequestMapping (method = RequestMethod.GET, path = "/clientes")
+
+   @GetMapping("/usuarios")
 	public Cliente obterCliente() {
 	   return new Cliente(28, "Pedro", "123.456.124-89");
 	}
