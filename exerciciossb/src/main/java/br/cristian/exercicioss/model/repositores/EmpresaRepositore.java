@@ -1,10 +1,9 @@
 package br.cristian.exercicioss.model.repositores;
 
 
-import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import br.cristian.exercicioss.model.entities.Empresa;
 
 public interface EmpresaRepositore 
-extends CrudRepository<Empresa, Integer> {
+extends JpaRepository<Empresa, String>{
 }
