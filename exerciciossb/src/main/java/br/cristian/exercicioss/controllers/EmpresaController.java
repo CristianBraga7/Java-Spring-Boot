@@ -2,7 +2,7 @@ package br.cristian.exercicioss.controllers;
 
 import br.cristian.exercicioss.model.entities.Empresa;
 import br.cristian.exercicioss.model.repositores.EmpresaRepositore;
-import br.cristian.exercicioss.model.repositores.ProdutoRepositores;
+
 
 import java.util.UUID;
 
@@ -33,10 +33,4 @@ public class EmpresaController {
     	public Empresa ObterPorId(@PathVariable("id") String id) {
     		return empresaRepositore.findById(id).orElse(null);
     	}
-<<<<<<< HEAD
     }
-=======
-    }
-
-  
->>>>>>> 9f590c314dad0f83ee2187ef478d718b3ebe4a0a
