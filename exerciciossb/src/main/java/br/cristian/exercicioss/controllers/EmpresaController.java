@@ -2,6 +2,7 @@ package br.cristian.exercicioss.controllers;
 
 import br.cristian.exercicioss.model.entities.Empresa;
 import br.cristian.exercicioss.model.repositores.EmpresaRepositore;
+import br.cristian.exercicioss.model.repositores.ProdutoRepositores;
 
 import java.util.UUID;
 
@@ -19,14 +20,19 @@ public class EmpresaController {
 	}
 
 	@PostMapping
-    public Empresa salvar (@RequestBody Empresa empresa) {
+    public Empresa salvar(@RequestBody Empresa empresa) {
     	System.out.println("Empresa Cadastrada: " + empresa);
     	
-    	var cod_empresa = UUID.randomUUID().toString();
-    	empresa.setCod_empresa(cod_empresa);
+    	String id = UUID.randomUUID().toString();
+    	empresa.setId(id);
+    	
     	empresaRepositore.save(empresa);
     	return empresa;
-
+	}
+    	@GetMapping("{id}")
+    	public Empresa ObterPorId(@PathVariable("id") String id) {
+    		return empresaRepositore.findById(id).orElse(null);
+    	}
     }
-}
+
   
