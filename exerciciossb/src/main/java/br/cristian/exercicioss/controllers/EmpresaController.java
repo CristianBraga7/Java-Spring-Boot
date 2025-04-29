@@ -33,4 +33,10 @@ public class EmpresaController {
     	public Empresa ObterPorId(@PathVariable("id") String id) {
     		return empresaRepositore.findById(id).orElse(null);
     	}
+<<<<<<< HEAD
     }
+=======
+    }
+
+  
+>>>>>>> 9f590c314dad0f83ee2187ef478d718b3ebe4a0a
