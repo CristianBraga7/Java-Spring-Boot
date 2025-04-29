@@ -3,6 +3,7 @@ package br.cristian.exercicioss.controllers;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +38,10 @@ public class ProdutoControllers {
 	    public Produto obterPorID(@PathVariable("id") String id) {
 	    	return produtoRepositores.findById(id).orElse(null);	 
 	}
+		@DeleteMapping("{id}")
+		public void deletar(@PathVariable("id")String id) {
+			produtoRepositores.deleteById(id);
+		}
 }
 
    
