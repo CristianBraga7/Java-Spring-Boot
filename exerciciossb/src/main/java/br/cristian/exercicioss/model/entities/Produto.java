@@ -13,6 +13,16 @@ public class Produto {
 	private String nome;
 	private String descricao;
 	private String preco;
+
+	
+public Produto(){
+		
+	}
+	
+	public Produto(String nome) {
+		super();
+		this.nome = nome;
+	}
 	
 	public String getDescricao() {
 		return descricao;
@@ -30,15 +40,6 @@ public class Produto {
 		this.preco = preco;
 	}
 
-	public Produto(){
-		
-	}
-	
-	public Produto(String nome) {
-		super();
-		this.nome = nome;
-	}
-	
 	public String getId() {
 		return id;
 	}
